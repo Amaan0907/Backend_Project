@@ -1,11 +1,26 @@
 {
-  "name": "project",
+  "name": "backend_project",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a Backend Project",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amaan0907/Backend_Project.git"
+  },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amaan0907/Backend_Project/issues"
+  },
+  "homepage": "https://github.com/Amaan0907/Backend_Project#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.1"
+  }
 }
