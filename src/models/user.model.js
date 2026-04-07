@@ -44,6 +44,9 @@ const userSchema=new Schema({
     },
     refreshToken:{
         type:String
+    },
+    avatarPublicId:{
+        type:String,
     }
 
 },{timestamps:true})
