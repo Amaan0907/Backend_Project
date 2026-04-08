@@ -38,13 +38,15 @@ const deleteFromCloudinary=async(id)=>{
 
         const response=await cloudinary.uploader.destroy(id)
 
-        if(!response){
+        if(response.result!=="ok"){
             throw new ApiError(500,"Failed to delete old file")
         }
 
         return response
 
     }catch(error){
+        if(error instanceof ApiError) throw error
+
         throw new ApiError(500,"Something Went Wrong")
     }
 }

@@ -263,7 +263,14 @@ const updateAccountDetails=asyncHandler(async(req,res)=>{
 
 
 const updateUserAvatar=asyncHandler(async(req,res)=>{
+
     const avatarLocalPath=req.file?.path
+    const currentUser=await User.findById(req.user?._id)
+    console.log(currentUser)
+    const oldAvatarId=currentUser?.avatarPublicId
+    console.log(oldAvatarId)
+    
+
     if(!avatarLocalPath){
         throw new ApiError(400,"Avatar file is missing")
     }
@@ -275,12 +282,15 @@ const updateUserAvatar=asyncHandler(async(req,res)=>{
 
     const user=await User.findByIdAndUpdate(req.user?._id,{
         $set:{
-            avatar:avatar.url
+            avatar:avatar.url,
+            avatarPublicId:avatar.public_id
         }
     },{new:true}).select("-password")
 
-
-    await deleteFromCloudinary(user.avatar.public_id)
+    if(!oldAvatarId){
+        throw new ApiError(500,"File Not on CLoudinary")
+    }
+    await deleteFromCloudinary(oldAvatarId)
 
 
     return res
