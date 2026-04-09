@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config src/index.js"
+    "dev": "nodemon -r dotenv/config src/index.js",
+    "client:dev": "vite --config vite.config.js",
+    "client:build": "vite build --config vite.config.js",
+    "client:preview": "vite preview --config vite.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,10 @@
   },
   "homepage": "https://github.com/Amaan0907/Backend_Project#readme",
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
     "nodemon": "^3.1.14",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.1",
+    "vite": "^6.4.2"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -33,6 +38,8 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.3.3",
     "mongoose-aggregate-paginate-v2": "^1.1.4",
-    "multer": "^2.1.1"
+    "multer": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
