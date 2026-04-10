@@ -9,7 +9,9 @@
     "dev": "nodemon -r dotenv/config src/index.js",
     "client:dev": "vite --config vite.config.js",
     "client:build": "vite build --config vite.config.js",
-    "client:preview": "vite preview --config vite.config.js"
+    "client:preview": "vite preview --config vite.config.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
